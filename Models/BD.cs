@@ -17,5 +17,17 @@ public static class BD {
                 pIdDeporte = deportista.IdDeporte
             });
         }
+
+        
+    }
+    public static int EliminarDeportista (int IdDeportista)
+    {
+        int deportistasEliminados = 0;
+        string sql = "DELETE FROM Deportistas WHERE IdDeportista = @Deportista";
+        using (SqlConnection BD = new SqlConnection(_connectionString))
+        {
+            deportistasEliminados = BD.Execute(sql,new{Deportista = IdDeportista});
+        }
+        return deportistasEliminados;
     }
 }
