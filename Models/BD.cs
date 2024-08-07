@@ -37,8 +37,19 @@ public static class BD {
         using (SqlConnection BD = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Deportes WHERE IdDeporte = @pIdDeporte";
-            depMuestra = BD.QueryFirstOrDefault<Deporte>(sql);
+            depMuestra = BD.QueryFirstOrDefault<Deporte>(sql, new { pIdDeporte = idDeporte });
         }
         return depMuestra;
     }
+    public static Pais? VerInfoPais (int idPais)
+    {
+        Pais? paisMuestra;
+        using (SqlConnection BD = new SqlConnection (_connectionString))
+        {
+            string sql = "SELECT * FROM Pais WHERE IdPais = @IdPais";
+            paisMuestra = BD.QueryFirstOrDefault<Pais>(sql, new { IdPais = idPais });
+        }
+        return paisMuestra;
+    }
+
 }
