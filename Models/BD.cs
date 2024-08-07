@@ -30,4 +30,15 @@ public static class BD {
         }
         return deportistasEliminados;
     }
+
+    public static Deporte? VerInfoDeporte(int idDeporte)
+    {
+        Deporte? depMuestra;
+        using (SqlConnection BD = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Deportes WHERE IdDeporte = @pIdDeporte";
+            depMuestra = BD.QueryFirstOrDefault<Deporte>(sql);
+        }
+        return depMuestra;
+    }
 }
