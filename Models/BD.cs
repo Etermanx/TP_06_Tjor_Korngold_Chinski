@@ -60,7 +60,16 @@ public static class BD {
         deportistaMuestra = BD.QueryFirstOrDefault<Deportista>(sql,new {IdDeportista = idDeportista});
     }
     return deportistaMuestra;
-
+    }
+    private static List<Pais> ListaPaises = new List<Pais>();
+    public static List<Pais> ListarPaises () 
+    {
+        using (SqlConnection BD  = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Paises";
+            ListaPaises = BD.Query<Pais>(sql) .ToList();
+        }
+        return ListaPaises;
 
     }
 
