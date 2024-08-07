@@ -74,7 +74,7 @@ public static class BD {
     }
 
     private static List<Deportista> ListaDeportista = new List<Deportista>();
-    public static List<Deportista> ListarDeportistas (int idDeporte)
+    public static List<Deportista> ListarDeportistas (int idDeporte,int idPais)
     {
       using(SqlConnection BD = new SqlConnection(_connectionString))
       {
@@ -83,5 +83,7 @@ public static class BD {
       }  
       return ListaDeportista;
     }
+
+   
 
 }
