@@ -73,4 +73,15 @@ public static class BD {
 
     }
 
+    private static List<Deportista> ListaDeportista = new List<Deportista>();
+    public static List<Deportista> ListarDeportistas (int idDeporte)
+    {
+      using(SqlConnection BD = new SqlConnection(_connectionString))
+      {
+        string sql = "SELECT * FROM Deportistas WHERE IdDeporte = @pDeporte";
+        ListaDeportista = BD.Query<Deportista>(sql,new {pDeporte = idDeporte }) .ToList();
+      }  
+      return ListaDeportista;
+    }
+
 }
