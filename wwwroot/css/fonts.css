@@ -1,0 +1,37 @@
+@font-face {
+  font-family: "font-icons";
+  src:
+    url(https://olympics.com/_pr/topic-assets/fonts/font-icons.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Olympic Headline";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url(https://olympics.com/_pr/topic-assets/fonts/OlympicHeadline-Regular.woff2) format("woff2"),
+    url(https://olympics.com/_pr/topic-assets/fonts/OlympicHeadline-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: "Olympic Sans";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url(https://olympics.com/_pr/topic-assets/fonts/OlympicSans-Regular.woff2) format("woff2"),
+    url(https://olympics.com/_pr/topic-assets/fonts/OlympicSans-Regular.woff) format("woff");
+}
+@font-face {
+  font-family: "Olympic Sans";
+  font-style: normal;
+  font-weight: 500;
+  src:
+    url(https://olympics.com/_pr/topic-assets/fonts/OlympicSans-Medium.woff2) format("woff2"),
+    url(https://olympics.com/_pr/topic-assets/fonts/OlympicSans-Medium.woff) format("woff");
+}
+@font-face {
+  font-family: "Olympic Sans";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url(https://olympics.com/_pr/topic-assets/fonts/OlympicSans-Bold.woff2) format("woff2"),
+    url(https://olympics.com/_pr/topic-assets/fonts/OlympicSans-Bold.woff) format("woff");
+}

@@ -1,5 +1,13 @@
+@import url("font.css");
 html {
   font-size: 14px;
+}
+
+body {
+  font-family: "Olympic Sans", Helvetica, Arial, sans-serif;
+}
+h2 {
+  font-family: "Olympic Headline", Helvetica, Arial, sans-serif;
 }
 
 @media (min-width: 768px) {
