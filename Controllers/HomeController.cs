@@ -30,6 +30,12 @@ public class HomeController : Controller
         ViewBag.Deportes = BD.ListarDeportes();
         return View();
     }
+    public IActionResult Creditos()
+    {
+        return View();
+    }
+
+
     public IActionResult VerDetalleDeporte(int idDeporte)
     {
         ViewBag.DetalleDeporte = BD.VerInfoDeporte(idDeporte);
@@ -41,24 +47,6 @@ public class HomeController : Controller
         else
             return RedirectToAction("Error");
     }
-
-    public IActionResult Creditos()
-    {
-        return View();
-    }
-
-    public IActionResult EliminarDeportista(int idCandidato)
-    {
-        BD.EliminarDeportista(idCandidato);
-        return View("Index");
-    }
-    public IActionResult GuardarDeportista(Deportista dep)
-    {
-        BD.AgregarDeportista(dep);
-        return View("Index");
-
-    }
-
     public IActionResult VerDetallePais(int idPais)
     {
         ViewBag.DetallePais = BD.VerInfoPais(idPais);
@@ -70,22 +58,34 @@ public class HomeController : Controller
         else
             return RedirectToAction("Error");
     }
-
-    public IActionResult VerDetalleDeportista(int idDeportista){
-
+    public IActionResult VerDetalleDeportista(int idDeportista)
+    {
         ViewBag.DetalleDeportista = BD.VerInfoDeportista(idDeportista);
-
-        return View("DetalleDeportista");
+        if (ViewBag.DetalleDeporte != null)
+            return View("DetalleDeportista");
+        else
+            return RedirectToAction("Error");
     }
 
-    public IActionResult AgregarDeportista(){
+
+    public IActionResult AgregarDeportista()
+    {
 
         ViewBag.ListarDeportes = BD.ListarDeportes();
         ViewBag.ListarPaises = BD.ListarPaises();
 
-
-
         return View("FormularioCargaDeportistas");
+    }
+    public IActionResult EliminarDeportista(int idCandidato)
+    {
+        BD.EliminarDeportista(idCandidato);
+        return View("Index");
+    }
+    public IActionResult GuardarDeportista(Deportista dep)
+    {
+        BD.AgregarDeportista(dep);
+        return View("Index");
+
     }
 
 
