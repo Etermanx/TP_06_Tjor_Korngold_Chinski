@@ -34,7 +34,7 @@ public class HomeController : Controller
         {
             ViewBag.DetalleDeporte = BD.VerInfoDeporte(idDeporte);
             ViewBag.ListaDeportistas = BD.ListarDeportistasPorDeporte(idDeporte);
-            return View();
+            return View("DetalleDeporte");
         }
         else
             return RedirectToAction("Error");
