@@ -73,6 +73,17 @@ public static class BD {
 
     }
 
+    public static List<Deporte> ListarDeportes()
+    {
+        List<Deporte> ListaDeportes;
+        using (SqlConnection BD = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Deportes";
+            ListaDeportes = BD.Query<Deporte>(sql).ToList();
+        }
+        return ListaDeportes;
+    }
+
     public static List<Deportista> ListarDeportistasPorDeporte(int idDeporte)
     {
         List<Deportista> ListaDeportistas;

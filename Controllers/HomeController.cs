@@ -17,6 +17,11 @@ public class HomeController : Controller
     {
         return View();
     }
+    public IActionResult Deportes()
+    {
+        ViewBag.Deportes = BD.ListarDeportes();
+        return View();
+    }
 
     public IActionResult Privacy()
     {
