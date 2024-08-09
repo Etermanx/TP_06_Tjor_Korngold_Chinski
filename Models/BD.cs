@@ -17,19 +17,18 @@ public static class BD {
                 pIdDeporte = deportista.IdDeporte
             });
         }
-
-        
     }
     public static int EliminarDeportista (int IdDeportista)
     {
         int deportistasEliminados = 0;
-        string sql = "DELETE FROM Deportistas WHERE IdDeportista = @Deportista";
+        string sql = "DELETE FROM Deportistas WHERE IdDeportista = @pDeportista";
         using (SqlConnection BD = new SqlConnection(_connectionString))
         {
-            deportistasEliminados = BD.Execute(sql,new{Deportista = IdDeportista});
+            deportistasEliminados = BD.Execute(sql, new{ pDeportista = IdDeportista });
         }
         return deportistasEliminados;
     }
+
 
     public static Deporte? VerInfoDeporte(int idDeporte)
     {
@@ -46,8 +45,8 @@ public static class BD {
         Pais? paisMuestra;
         using (SqlConnection BD = new SqlConnection (_connectionString))
         {
-            string sql = "SELECT * FROM Paises WHERE IdPais = @IdPais";
-            paisMuestra = BD.QueryFirstOrDefault<Pais>(sql, new { IdPais = idPais });
+            string sql = "SELECT * FROM Paises WHERE IdPais = @pIdPais";
+            paisMuestra = BD.QueryFirstOrDefault<Pais>(sql, new { pIdPais = idPais });
         }
         return paisMuestra;
     }
@@ -55,24 +54,25 @@ public static class BD {
     {
         Deportista? deportistaMuestra;
         using (SqlConnection BD  = new SqlConnection (_connectionString))
-    {
-        string sql = "SELECT * FROM Deportistas WHERE IdDeportista = @IdDeportista";
-        deportistaMuestra = BD.QueryFirstOrDefault<Deportista>(sql,new {IdDeportista = idDeportista});
+        {
+            string sql = "SELECT * FROM Deportistas WHERE IdDeportista = @pIdDeportista";
+            deportistaMuestra = BD.QueryFirstOrDefault<Deportista>(sql, new { pIdDeportista = idDeportista });
+        }
+        return deportistaMuestra;
     }
-    return deportistaMuestra;
-    }
-    private static List<Pais> ListaPaises = new List<Pais>();
+
+
     public static List<Pais> ListarPaises () 
     {
+        List<Pais> ListaPaises = new List<Pais>();
         using (SqlConnection BD  = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Paises";
-            ListaPaises = BD.Query<Pais>(sql) .ToList();
+            ListaPaises = BD.Query<Pais>(sql).ToList();
         }
         return ListaPaises;
 
     }
-
     public static List<Deporte> ListarDeportes()
     {
         List<Deporte> ListaDeportes;
@@ -83,18 +83,16 @@ public static class BD {
         }
         return ListaDeportes;
     }
-
     public static List<Deportista> ListarDeportistasPorDeporte(int idDeporte)
     {
         List<Deportista> ListaDeportistas;
         using (SqlConnection BD = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Deportistas WHERE IdDeporte = @pIdDeporte";
-            ListaDeportistas = BD.Query<Deportista>(sql,new { pIdDeporte = idDeporte }).ToList();
+            ListaDeportistas = BD.Query<Deportista>(sql, new { pIdDeporte = idDeporte }).ToList();
         }
         return ListaDeportistas;
     }
-
     public static List<Deportista> ListarDeportistasPorPais(int idPais)
     {
         List<Deportista> ListaDeportistas;
