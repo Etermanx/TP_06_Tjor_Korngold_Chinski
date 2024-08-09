@@ -16,20 +16,24 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+
     public IActionResult Index()
     {
         return View();
     }
+
     public IActionResult Paises()
     {
         ViewBag.Paises = BD.ListarPaises();
         return View();
     }
+
     public IActionResult Deportes()
     {
         ViewBag.Deportes = BD.ListarDeportes();
         return View();
     }
+
     public IActionResult Creditos()
     {
         return View();
@@ -47,6 +51,7 @@ public class HomeController : Controller
         else
             return RedirectToAction("Error");
     }
+
     public IActionResult VerDetallePais(int idPais)
     {
         ViewBag.DetallePais = BD.VerInfoPais(idPais);
@@ -58,6 +63,7 @@ public class HomeController : Controller
         else
             return RedirectToAction("Error");
     }
+
     public IActionResult VerDetalleDeportista(int idDeportista)
     {
         ViewBag.DetalleDeportista = BD.VerInfoDeportista(idDeportista);
@@ -70,22 +76,23 @@ public class HomeController : Controller
 
     public IActionResult AgregarDeportista()
     {
-
         ViewBag.ListarDeportes = BD.ListarDeportes();
         ViewBag.ListarPaises = BD.ListarPaises();
 
         return View("FormularioCargaDeportistas");
     }
+
     public IActionResult EliminarDeportista(int idCandidato)
     {
         BD.EliminarDeportista(idCandidato);
         return View("Index");
     }
+
+    [HttpPost]
     public IActionResult GuardarDeportista(Deportista dep)
     {
         BD.AgregarDeportista(dep);
-        return View("Index");
-
+        return RedirectToAction("Index");
     }
 
 
