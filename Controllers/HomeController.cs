@@ -1,4 +1,7 @@
+using System;
+using System.Data.SqlClient;
 using System.Diagnostics;
+using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using TP_06_Tjor_Korngold_Chinski.Models;
 
@@ -44,5 +47,46 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+    public IActionResult Creditos()
+    {
+        return View();
+    }
+
+    public IActionResult EliminarDeportista(int idCandidato)
+    {
+        BD.EliminarDeportista(idCandidato);
+        return View("Index");
+    }
+    public IActionResult GuardarDeportista(Deportista dep)
+    {
+        BD.AgregarDeportista(dep);
+        return View("Index");
+
+    }
+
+    public IActionResult VerDetallePais(int idPais){
+
+        ViewBag.DetallePais = BD.VerInfoPais(idPais);
+        ViewBag.ListaDeportistas = BD.VerInfoPais(idPais);
+
+        return View("DetallePais");
+    }
+
+    public IActionResult VerDetalleDeportista(int idDeportista){
+
+        ViewBag.DetalleDeportista = BD.VerInfoDeportista(idDeportista);
+
+        return View("DetalleDeportista");
+    }
+
+    public IActionResult AgregarDeportista(){
+
+        ViewBag.ListarDeportes = BD.ListarDeportes();
+        ViewBag.ListarPaises = BD.ListarPaises();
+
+
+
+        return View("FormularioCargaDeportistas");
     }
 }
