@@ -35,7 +35,6 @@ public class HomeController : Controller
         ViewBag.DetalleDeporte = BD.VerInfoDeporte(idDeporte);
         if (ViewBag.DetalleDeporte != null)
         {
-            ViewBag.DetalleDeporte = BD.VerInfoDeporte(idDeporte);
             ViewBag.ListaDeportistas = BD.ListarDeportistasPorDeporte(idDeporte);
             return View("DetalleDeporte");
         }
@@ -43,11 +42,6 @@ public class HomeController : Controller
             return RedirectToAction("Error");
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
     public IActionResult Creditos()
     {
         return View();
@@ -65,12 +59,16 @@ public class HomeController : Controller
 
     }
 
-    public IActionResult VerDetallePais(int idPais){
-
+    public IActionResult VerDetallePais(int idPais)
+    {
         ViewBag.DetallePais = BD.VerInfoPais(idPais);
-        ViewBag.ListaDeportistas = BD.VerInfoPais(idPais);
-
-        return View("DetallePais");
+        if (ViewBag.DetalleDeporte != null)
+        {
+            ViewBag.ListaDeportistas = BD.ListarDeportistasPorPais(idPais);
+            return View("DetallePais");
+        }
+        else
+            return RedirectToAction("Error");
     }
 
     public IActionResult VerDetalleDeportista(int idDeportista){
@@ -88,5 +86,12 @@ public class HomeController : Controller
 
 
         return View("FormularioCargaDeportistas");
+    }
+
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public IActionResult Error()
+    {
+        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
