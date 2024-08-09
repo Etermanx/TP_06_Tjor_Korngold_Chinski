@@ -29,9 +29,13 @@ public class HomeController : Controller
     }
     public IActionResult VerDetalleDeporte(int idDeporte)
     {
-        ViewBag.Derpote = BD.VerInfoDeporte(idDeporte);
-        if (ViewBag.Derpote != null)
+        ViewBag.DetalleDeporte = BD.VerInfoDeporte(idDeporte);
+        if (ViewBag.DetalleDeporte != null)
+        {
+            ViewBag.DetalleDeporte = BD.VerInfoDeporte(idDeporte);
+            ViewBag.ListaDeportistas = BD.ListarDeportistasPorDeporte(idDeporte);
             return View();
+        }
         else
             return RedirectToAction("Error");
     }
