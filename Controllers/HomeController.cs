@@ -27,6 +27,14 @@ public class HomeController : Controller
         ViewBag.Deportes = BD.ListarDeportes();
         return View();
     }
+    public IActionResult VerDetalleDeporte(int idDeporte)
+    {
+        ViewBag.Derpote = BD.VerInfoDeporte(idDeporte);
+        if (ViewBag.Derpote != null)
+            return View();
+        else
+            return RedirectToAction("Error");
+    }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
