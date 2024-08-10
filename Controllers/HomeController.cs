@@ -91,8 +91,26 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult GuardarDeportista(Deportista dep)
     {
-        BD.AgregarDeportista(dep);
-        return RedirectToAction("Index");
+        bool parametrosExisten = dep.Apellido != String.Empty && dep.Nombre != String.Empty && dep.FechaNacimiento != DateTime.MinValue && dep.IdPais > 0 && dep.IdDeporte > 0;
+        bool fkExisten;
+
+        if (parametrosExisten)
+        {
+            fkExisten = BD.VerInfoPais(dep.IdPais) != null && BD.VerInfoDeporte(dep.IdDeporte) != null;
+            if (fkExisten)
+            {
+                BD.AgregarDeportista(dep);
+                return RedirectToAction("Index");
+            }
+            else
+                ViewBag.Error = "El país/deporte no existe(n)";
+        }
+        else
+           ViewBag.Error = "Faltan completar cosas";
+
+        ViewBag.ListarDeportes = BD.ListarDeportes();
+        ViewBag.ListarPaises = BD.ListarPaises();
+        return View("FormularioCargaDeportistas");
     }
 
 
