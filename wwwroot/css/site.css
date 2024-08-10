@@ -1,14 +1,16 @@
 @import url("fonts.css");
 html {
   font-size: 14px;
+  position: relative;
+  min-height: 100%;
 }
 
 body {
   font-family: "Olympic Sans", Helvetica, Arial, sans-serif;
+  margin-bottom: 60px;
 }
-h2 {
-  font-family: "Olympic Headline", Helvetica, Arial, sans-serif;
-}
+h1 { font-size: 55px; }
+h1, h3 { font-family: "Olympic Headline", Helvetica, Arial, sans-serif; }
 
 .navbar {
   padding: 5px 1.5rem;
@@ -16,15 +18,6 @@ h2 {
 .navbar-brand img {
   width: auto;
   height: 40px;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  margin-bottom: 60px;
 }
 
 
@@ -57,13 +50,17 @@ a {
   border-bottom: 1px solid #e5e5e5;
 }
 
+.alert, .form-control, .form-select, .btn {
+  border-radius: 0;
+}
+
 
 footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
-  line-height: 60px;
+  line-height: 62px;
 }
 
 
