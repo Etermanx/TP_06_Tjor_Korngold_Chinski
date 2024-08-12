@@ -21,7 +21,10 @@ public class HomeController : Controller
     {
         return View();
     }
-
+    public IActionResult Historia()
+    {
+        return View();
+    }
     public IActionResult Paises()
     {
         ViewBag.Paises = BD.ListarPaises();
