@@ -18,11 +18,11 @@
                 <label for="apellido" class="form-label">Apellido*</label>
                 @if (ViewBag.Dep != null && ViewBag.Dep.Apellido != null)
                 {
-                    <input type="text" class="form-control" id="apellido" name="Apellido" placeholder="Cabrera" value="@ViewBag.Dep.Apellido" required>
+                    <input type="text" class="form-control" id="apellido" name="Apellido" placeholder="Cabrera" value="@ViewBag.Dep.Apellido" autocomplete="off" required>
                 }
                 else
                 {
-                    <input type="text" class="form-control" id="apellido" name="Apellido" placeholder="Cabrera" required>
+                    <input type="text" class="form-control" id="apellido" name="Apellido" placeholder="Cabrera" autocomplete="off" required>
                 }
                 <div class="invalid-feedback">Ingrese un apellido.</div>
                 <!-- Fin apellido -->
@@ -32,11 +32,11 @@
                 <label for="nombre" class="form-label">Nombre*</label>
                 @if (ViewBag.Dep != null && ViewBag.Dep.Nombre != null)
                 {
-                    <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Nina" value="@ViewBag.Dep.Nombre" required>
+                    <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Nina" value="@ViewBag.Dep.Nombre" autocomplete="off" required>
                 }
                 else
                 {
-                    <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Nina" required>
+                    <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Nina" autocomplete="off" required>
                 }
                 <div class="invalid-feedback">Ingrese un nombre.</div>
                 <!-- Fin nombre -->
@@ -48,11 +48,11 @@
                 <label for="fechaNacimiento" class="form-label">Fecha de nacimiento*</label>
                 @if (ViewBag.Dep != null && ViewBag.Dep.FechaNacimiento != null)
                 {
-                    <input type="date" class="form-control" id="fechaNacimiento" name="FechaNacimiento" value="@ViewBag.Dep.FechaNacimiento.ToString("yyyy-MM-dd")" required>
+                    <input type="date" class="form-control" id="fechaNacimiento" name="FechaNacimiento" value="@ViewBag.Dep.FechaNacimiento.ToString("yyyy-MM-dd")" autocomplete="off" required>
                 }
                 else
                 {
-                    <input type="date" class="form-control" id="fechaNacimiento" name="FechaNacimiento" required>
+                    <input type="date" class="form-control" id="fechaNacimiento" name="FechaNacimiento" autocomplete="off" required>
                 }
                 <div class="invalid-feedback">Ingrese una fecha de nacimiento.</div>
                 <!-- Fin fecha de nacimiento -->
@@ -64,11 +64,11 @@
                 <label for="foto" class="form-label">Foto*</label>
                 @if (ViewBag.Dep != null && ViewBag.Dep.Foto != null)
                 {
-                    <input type="url" class="form-control" id="foto" name="Foto" placeholder="https://www.example.com/foto.jpg" value="@ViewBag.Dep.Foto" aria-describedby="fotoHelp" required>
+                    <input type="url" class="form-control" id="foto" name="Foto" placeholder="https://www.example.com/foto.jpg" value="@ViewBag.Dep.Foto" aria-describedby="fotoHelp" autocomplete="off" required>
                 }
                 else
                 {
-                    <input type="url" class="form-control" id="foto" name="Foto" placeholder="https://www.example.com/foto.jpg" aria-describedby="fotoHelp" required>
+                    <input type="url" class="form-control" id="foto" name="Foto" placeholder="https://www.example.com/foto.jpg" aria-describedby="fotoHelp" autocomplete="off" required>
                 }
                 <div id="fotoHelp" class="form-text">Usar la URL de una imagen de Internet.</div>
                 <div class="invalid-feedback">Ingrese una foto.</div>
@@ -79,7 +79,7 @@
             <div class="col-md">
                 <!-- Iniciar deporte -->
                 <label for="deporte" class="form-label">Deporte*</label>
-                <select class="form-select" id="deporte" name="IdDeporte" required>
+                <select class="form-select" id="deporte" name="IdDeporte" autocomplete="off" required>
                     @if (ViewBag.Dep != null && ViewBag.Dep.IdDeporte != null) {
                         <option disabled value="">Elegir...</option>
                     }
@@ -106,7 +106,7 @@
             <div class="col-md">
                 <!-- Iniciar país -->
                 <label for="pais" class="form-label">País*</label>
-                <select class="form-select" id="pais" name="IdPais" required>
+                <select class="form-select" id="pais" name="IdPais" autocomplete="off" required>
                     <option disabled value="">Elegir...</option>
                     @foreach(Pais pais in ViewBag.ListarPaises)
                     {
