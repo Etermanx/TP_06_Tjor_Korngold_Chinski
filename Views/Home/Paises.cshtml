@@ -1,20 +1,22 @@
 @{
     ViewBag.Titulo = "Países";
 }
-<h1>Países</h1>
-@if (ViewBag.Paises.Count != 0)
-{
-    <ul class="listaImagenes">
-    @foreach (Pais pais in ViewBag.Paises)
+<div class="container">
+    <h1>Países</h1>
+    @if (ViewBag.Paises.Count != 0)
     {
+    <ul class="listaImagenes">
+        @foreach (Pais pais in ViewBag.Paises)
+        {
         <li><a href="@Url.Action("VerDetallePais", new { idPais = pais.IdPais })">
             <img src="@pais.Bandera" alt="Bandera de @pais.Nombre">
             <p>@pais.Nombre</p>
         </a></li>
-    }
+        }
     </ul>
-}
-else
-{
+    }
+    else
+    {
     <p class="text-secondary text-center">No hay paises.</p>
-}
+    }
+</div>

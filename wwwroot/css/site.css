@@ -1,16 +1,14 @@
-@import url("fonts.css");
-
 body {
-  font-family: "Olympic Sans", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro Paris2024", Helvetica, Arial, sans-serif;
   font-size: 18px;
   margin-bottom: 60px;
 }
 
-h1 {
-  font-size: 62px;
-  text-shadow: #EBEBEB -15px -15px;
+h1, h2, h3 {
+  font-family: "Paris 2024", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
 }
-h1, h3 { font-family: "Olympic Headline Condensed", Helvetica, Arial, sans-serif; }
 img { width: 100%; }
 .centrado {
   text-align: center;
@@ -29,8 +27,12 @@ img { width: 100%; }
 
 
 .navbar {
-  padding: 0;
+  position: fixed;
+  top: 0;
   font-size: 22px;
+  width: 100%;
+  padding: 0;
+  z-index: 1;
 }
 .navbar-brand, .navbar-toggler-icon {
   padding: 0;
@@ -40,18 +42,26 @@ img { width: 100%; }
   width: auto;
   height: 40px;
 }
-
-
-.alert, .form-control, .form-select, .btn, .navbar-toggler {
-  border-radius: 0;
-}
-
-
 .text-dark, a, a:hover { color: #100F0D; }
 .bg-dark { background: #100F0D; }
 .border-top { border-top: 1px solid #E5E5E5; }
 .border-bottom { border-bottom: 1px solid #E5E5E5; }
 
+
+main .container:first-child {
+  margin-top: 60px;
+}
+.alert, .form-control, .form-select, .btn, .navbar-toggler {
+  border-radius: 0;
+}
+
+/*#carouselHome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}*/
 
 .listaImagenes {
   display: flex;

@@ -42,3 +42,93 @@
     url("https://olympics.com/_pr/topic-assets/fonts/OlympicSans-Bold.woff2") format("woff2"),
     url("https://olympics.com/_pr/topic-assets/fonts/OlympicSans-Bold.woff") format("woff");
 }
+
+
+@font-face {
+  font-family: "Paris 2024";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-Regular.woff2") format("woff2"),
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Paris 2024";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-Bold.woff2") format("woff2"),
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Paris 2024";
+  font-style: normal;
+  font-weight: 900;
+  src:
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-Black.woff2") format("woff2"),
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-Black.woff") format("woff");
+}
+@font-face {
+  font-family: "Paris 2024";
+  font-style: italic;
+  font-weight: 400;
+  src:
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-Italic.woff2") format("woff2"),
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-Italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Paris 2024";
+  font-style: italic;
+  font-weight: 700;
+  src:
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-BoldItalic.woff2") format("woff2"),
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-BoldItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Paris 2024";
+  font-style: italic;
+  font-weight: 900;
+  src:
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-BlackItalic.woff2") format("woff2"),
+    url("https://olympics.com/_pr/topic-assets/fonts/Paris2024/Paris2024-BlackItalic.woff") format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro Paris2024";
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url("https://olympics.com/_pr/topic-assets/fonts/SourceSansPro/SourceSansPro-Regular.woff2") format("woff2"),
+    url("https://olympics.com/_pr/topic-assets/fonts/SourceSansPro/SourceSansPro-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro Paris2024";
+  font-style: normal;
+  font-weight: 700;
+  src:
+    url("https://olympics.com/_pr/topic-assets/fonts/SourceSansPro/SourceSansPro-Bold.woff2") format("woff2"),
+    url("https://olympics.com/_pr/topic-assets/fonts/SourceSansPro/SourceSansPro-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro Paris2024";
+  font-style: normal;
+  font-weight: 900;
+  src:
+    url("https://olympics.com/_pr/topic-assets/fonts/SourceSansPro/SourceSansPro-Black.woff2") format("woff2"),
+    url("https://olympics.com/_pr/topic-assets/fonts/SourceSansPro/SourceSansPro-Black.woff") format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro Paris2024";
+  font-style: italic;
+  font-weight: 400;
+  src:
+    url("https://olympics.com/_pr/topic-assets/fonts/SourceSansPro/SourceSansPro-Italic.woff2") format("woff2"),
+    url("https://olympics.com/_pr/topic-assets/fonts/SourceSansPro/SourceSansPro-Italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Source Sans Pro Paris2024";
+  font-style: italic;
+  font-weight: 700;
+  src:
+    url("https://olympics.com/_pr/topic-assets/fonts/SourceSansPro/SourceSansPro-BoldItalic.woff2") format("woff2"),
+    url("https://olympics.com/_pr/topic-assets/fonts/SourceSansPro/SourceSansPro-BoldItalic.woff") format("woff");
+}
