@@ -19,6 +19,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        //const string[] 
         return View();
     }
     public IActionResult Historia()
