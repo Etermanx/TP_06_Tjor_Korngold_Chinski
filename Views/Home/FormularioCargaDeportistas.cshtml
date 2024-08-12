@@ -1,77 +1,127 @@
 @{
     ViewBag.Titulo = "Agregar deportista";
 }
-<h1>Agregar deportista</h1>
-<form class="needs-validation" method="POST" action="@Url.Action("GuardarDeportista")" novalidate>
-    @if (ViewBag.Error != null)
-    {
-    <div class="row gy-3">
-        <div class="col-md">
-            <div class="alert alert-danger">@ViewBag.Error</div>
+<div class="container">
+    <h1>Agregar deportista</h1>
+    <form class="needs-validation" method="POST" action="@Url.Action("GuardarDeportista")" novalidate>
+        @if (ViewBag.Error != null)
+        {
+        <div class="row gy-3">
+            <div class="col-md">
+                <div class="alert alert-danger">@ViewBag.Error</div>
+            </div>
         </div>
-    </div>
-    }
-    <div class="row gy-3 mb-2">
-        <div class="col-md">
-            <label for="apellido" class="form-label">Apellido*</label>
-            <input
-                type="text" class="form-control"
-                id="apellido" name="Apellido"
-                placeholder="Cabrera"
-                required>
-            <div class="invalid-feedback">Ingrese un apellido.</div>
-        </div>
-        <div class="col-md">
-            <label for="nombre" class="form-label">Nombre*</label>
-            <input
-                type="text" class="form-control"
-                id="nombre" name="Nombre"
-                placeholder="Nina"
-                required>
-            <div class="invalid-feedback">Ingrese un nombre.</div>
-        </div>
-    </div>
-    <div class="row gy-3 mb-2">
-        <div class="col-md">
-            <label for="foto" class="form-label">Foto*</label>
-            <input
-                type="url" class="form-control"
-                id="foto" name="Foto"
-                placeholder="https://www.example.com/foto.jpg"
-                aria-describedby="fotoHelp"
-                required>
-            <div id="fotoHelp" class="form-text">Usar la URL de una imagen de Internet.</div>
-            <div class="invalid-feedback">Ingrese una foto.</div>
-        </div>
-    </div>
-    <div class="row gy-3 mb-2">
-        <div class="col-md">
-            <label for="deporte" class="form-label">Deporte*</label>
-            <select class="form-select" id="deporte" name="IdDeporte" required>
-                <option selected disabled value="">Elegir...</option>
-                @foreach(Deporte deporte in ViewBag.ListarDeportes)
+        }
+        <div class="row gy-3 mb-2">
+            <div class="col-md">
+                <!-- Iniciar apellido -->
+                <label for="apellido" class="form-label">Apellido*</label>
+                @if (ViewBag.Dep != null && ViewBag.Dep.Apellido != null)
                 {
-                <option value="@deporte.IdDeporte">@deporte.Nombre</option>
+                    <input type="text" class="form-control" id="apellido" name="Apellido" placeholder="Cabrera" value="@ViewBag.Dep.Apellido" required>
                 }
-            </select>
-            <div class="invalid-feedback">Ingrese un deporte.</div>
-        </div>
-        <div class="col-md">
-            <label for="pais" class="form-label">País*</label>
-            <select class="form-select" id="pais" name="IdPais" required>
-                <option selected disabled value="">Elegir...</option>
-                @foreach(Pais pais in ViewBag.ListarPaises)
+                else
                 {
-                <option value="@pais.IdPais">@pais.Nombre</option>
+                    <input type="text" class="form-control" id="apellido" name="Apellido" placeholder="Cabrera" required>
                 }
-            </select>
-            <div class="invalid-feedback">Ingrese un país.</div>
+                <div class="invalid-feedback">Ingrese un apellido.</div>
+                <!-- Fin apellido -->
+            </div>
+            <div class="col-md">
+                <!-- Iniciar nombre -->
+                <label for="nombre" class="form-label">Nombre*</label>
+                @if (ViewBag.Dep != null && ViewBag.Dep.Nombre != null)
+                {
+                    <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Nina" value="@ViewBag.Dep.Nombre" required>
+                }
+                else
+                {
+                    <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Nina" required>
+                }
+                <div class="invalid-feedback">Ingrese un nombre.</div>
+                <!-- Fin nombre -->
+            </div>
         </div>
-    </div>
-    <div class="row gy-3">
-        <div class="col-md">
-            <input class="btn btn-primary" type="submit" value="Agregar" />
-            <input class="btn btn-outline-secondary" type="reset" value="Borrar" />
+        <div class="row gy-3 mb-2">
+            <div class="col-md">
+                <!-- Iniciar fecha de nacimiento -->
+                <label for="fechaNacimiento" class="form-label">Fecha de nacimiento*</label>
+                @if (ViewBag.Dep != null && ViewBag.Dep.FechaNacimiento != null)
+                {
+                    <input type="date" class="form-control" id="fechaNacimiento" name="FechaNacimiento" value="@ViewBag.Dep.FechaNacimiento.ToString("yyyy-MM-dd")" required>
+                }
+                else
+                {
+                    <input type="date" class="form-control" id="fechaNacimiento" name="FechaNacimiento" required>
+                }
+                <div class="invalid-feedback">Ingrese una fecha de nacimiento.</div>
+                <!-- Fin fecha de nacimiento -->
+            </div>
         </div>
-    </div>
-</form>
+        <div class="row gy-3 mb-2">
+            <div class="col-md">
+                <!-- Iniciar foto -->
+                <label for="foto" class="form-label">Foto*</label>
+                @if (ViewBag.Dep != null && ViewBag.Dep.Foto != null)
+                {
+                    <input type="url" class="form-control" id="foto" name="Foto" placeholder="https://www.example.com/foto.jpg" value="@ViewBag.Dep.Foto" aria-describedby="fotoHelp" required>
+                }
+                else
+                {
+                    <input type="url" class="form-control" id="foto" name="Foto" placeholder="https://www.example.com/foto.jpg" aria-describedby="fotoHelp" required>
+                }
+                <div id="fotoHelp" class="form-text">Usar la URL de una imagen de Internet.</div>
+                <div class="invalid-feedback">Ingrese una foto.</div>
+                <!-- Fin foto -->
+            </div>
+        </div>
+        <div class="row gy-3 mb-2">
+            <div class="col-md">
+                <!-- Iniciar deporte -->
+                <label for="deporte" class="form-label">Deporte*</label>
+                <select class="form-select" id="deporte" name="IdDeporte" required>
+                    @if (ViewBag.Dep != null && ViewBag.Dep.IdDeporte != null) {
+                        <option disabled value="">Elegir...</option>
+                    }
+                    else
+                    {
+                        <option selected disabled value="">Elegir...</option>
+                    }
+
+                    @foreach(Deporte deporte in ViewBag.ListarDeportes)
+                    {
+                        if (ViewBag.Dep != null && ViewBag.Dep.IdDeporte != null && ViewBag.Dep.IdDeporte == deporte.IdDeporte)
+                        {
+                            <option value="@deporte.IdDeporte" selected>@deporte.Nombre</option>
+                        }
+                        else
+                        {
+                            <option value="@deporte.IdDeporte">@deporte.Nombre</option>
+                        }
+                    }
+                </select>
+                <div class="invalid-feedback">Ingrese un deporte.</div>
+                <!-- Fin deporte -->
+            </div>
+            <div class="col-md">
+                <!-- Iniciar país -->
+                <label for="pais" class="form-label">País*</label>
+                <select class="form-select" id="pais" name="IdPais" required>
+                    <option disabled value="">Elegir...</option>
+                    @foreach(Pais pais in ViewBag.ListarPaises)
+                    {
+                        <option value="@pais.IdPais">@pais.Nombre</option>
+                    }
+                </select>
+                <div class="invalid-feedback">Ingrese un país.</div>
+                <!-- Fin país -->
+            </div>
+        </div>
+        <div class="row gy-3">
+            <div class="col-md">
+                <input class="btn btn-primary" type="submit" value="Agregar" />
+                <input class="btn btn-outline-secondary" type="reset" value="Borrar" />
+            </div>
+        </div>
+    </form>
+</div>

@@ -95,8 +95,9 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult GuardarDeportista(Deportista dep)
     {
-        bool parametrosExisten = dep.Apellido != String.Empty && dep.Nombre != String.Empty && dep.FechaNacimiento != DateTime.MinValue && dep.IdPais > 0 && dep.IdDeporte > 0;
+        bool parametrosExisten = !String.IsNullOrEmpty(dep.Apellido) && !String.IsNullOrEmpty(dep.Nombre) && dep.FechaNacimiento != DateTime.MinValue && dep.IdPais > 0 && dep.IdDeporte > 0;
         bool fkExisten;
+        ViewBag.Dep = dep;
 
         if (parametrosExisten)
         {
