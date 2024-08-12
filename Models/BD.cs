@@ -66,7 +66,7 @@ public static class BD {
         List<Pais> ListaPaises = new List<Pais>();
         using (SqlConnection BD  = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Paises";
+            string sql = "SELECT * FROM Paises ORDER BY Nombre";
             ListaPaises = BD.Query<Pais>(sql).ToList();
         }
         return ListaPaises;
@@ -77,7 +77,7 @@ public static class BD {
         List<Deporte> ListaDeportes;
         using (SqlConnection BD = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Deportes";
+            string sql = "SELECT * FROM Deportes ORDER BY Nombre";
             ListaDeportes = BD.Query<Deporte>(sql).ToList();
         }
         return ListaDeportes;
@@ -87,7 +87,7 @@ public static class BD {
         List<Deportista> ListaDeportistas;
         using (SqlConnection BD = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Deportistas WHERE IdDeporte = @pIdDeporte";
+            string sql = "SELECT * FROM Deportistas WHERE IdDeporte = @pIdDeporte ORDER BY Nombre";
             ListaDeportistas = BD.Query<Deportista>(sql, new { pIdDeporte = idDeporte }).ToList();
         }
         return ListaDeportistas;
@@ -97,7 +97,7 @@ public static class BD {
         List<Deportista> ListaDeportistas;
         using (SqlConnection BD = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Deportistas WHERE IdPais = @pIdPais";
+            string sql = "SELECT * FROM Deportistas WHERE IdPais = @pIdPais ORDER BY Nombre";
             ListaDeportistas = BD.Query<Deportista>(sql, new { pIdPais = idPais }).ToList();
         }
         return ListaDeportistas;
