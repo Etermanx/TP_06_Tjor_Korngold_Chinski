@@ -7,7 +7,7 @@
     <ul class="listaImagenes">
     @foreach (Deporte deporte in ViewBag.Deportes)
     {
-        <li><a href="@Url.Action("VerDetalleDeporte", new { idDeporte = pais.IdDeporte })">
+        <li><a href="@Url.Action("VerDetalleDeporte", new { idDeporte = deporte.IdDeporte })">
             <img src="@deporte.Foto" alt="Foto de @deporte.Nombre">
             <p>@deporte.Nombre</p>
         </a></li>
