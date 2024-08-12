@@ -1,5 +1,6 @@
 @import url("fonts.css");
 
+
 html {
   font-size: 14px;
   position: relative;
@@ -11,11 +12,28 @@ body {
   margin-bottom: 60px;
 }
 
+
 h1 {
   font-size: 62px;
   text-shadow: #EBEBEB -15px -15px;
 }
 h1, h3 { font-family: "Olympic Headline Condensed", Helvetica, Arial, sans-serif; }
+img { width: 100%; }
+.centrado {
+  text-align: center;
+}
+.expandido {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  width: 100%;
+}
+.expandido li {
+  width: 33.33%;
+  text-align: center;
+}
+
+
 
 .navbar {
   padding: 0;
@@ -29,14 +47,17 @@ h1, h3 { font-family: "Olympic Headline Condensed", Helvetica, Arial, sans-serif
   height: 40px;
 }
 
+
 .alert, .form-control, .form-select, .btn, .navbar-toggler {
   border-radius: 0;
 }
 
-.text-dark, a { color: #100F0D; }
+
+.text-dark, a, a:hover { color: #100F0D; }
 .bg-dark { background: #100F0D; }
 .border-top { border-top: 1px solid #E5E5E5; }
 .border-bottom { border-bottom: 1px solid #E5E5E5; }
+
 
 .listaImagenes {
   display: flex;
@@ -56,9 +77,11 @@ h1, h3 { font-family: "Olympic Headline Condensed", Helvetica, Arial, sans-serif
   width: 55%;
 }
 
+
 footer {
   line-height: 62px;
 }
+
 
 @media (max-width: 700px) {
   .listaImagenes li { width: 49%; }
