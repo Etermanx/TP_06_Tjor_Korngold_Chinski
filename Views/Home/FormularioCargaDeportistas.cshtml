@@ -1,3 +1,6 @@
+@{
+    ViewBag.Titulo = "Agregar deportista";
+}
 <h1>Agregar deportista</h1>
 <form class="needs-validation" method="POST" action="@Url.Action("GuardarDeportista")" novalidate>
     @if (ViewBag.Error != null)
