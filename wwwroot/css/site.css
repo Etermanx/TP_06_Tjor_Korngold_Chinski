@@ -51,8 +51,21 @@ img { width: 100%; }
 main .container:first-child {
   margin-top: 60px;
 }
+.carousel-indicators, .carousel-caption {
+  right: auto;
+}
+.carousel-caption {
+  text-align: initial;
+}
+/*.carousel-control-prev, .carousel-control-next {
+  display: none;
+}*/
 .alert, .form-control, .form-select, .btn, .navbar-toggler {
   border-radius: 0;
+}
+
+.navbar.sticky {
+  background: url("https://olympics.com/_pr/topic-assets/paris-2024/sticky-header/green/d03.svg");
 }
 
 /*#carouselHome {
