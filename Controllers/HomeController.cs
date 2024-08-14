@@ -59,7 +59,7 @@ public class HomeController : Controller
     public IActionResult VerDetallePais(int idPais)
     {
         ViewBag.DetallePais = BD.VerInfoPais(idPais);
-        if (ViewBag.DetalleDeporte != null)
+        if (ViewBag.DetallePais != null)
         {
             ViewBag.ListaDeportistas = BD.ListarDeportistasPorPais(idPais);
             return View("DetallePais");
