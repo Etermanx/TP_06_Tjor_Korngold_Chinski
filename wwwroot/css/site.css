@@ -4,6 +4,10 @@ body {
   margin-bottom: 60px;
 }
 
+h1, h2 {
+  font-size: 45px;
+  font-weight: 900;
+}
 h1, h2, h3 {
   font-family: "Paris 2024", Helvetica, Arial, sans-serif;
   font-weight: bold;
@@ -57,23 +61,55 @@ img { width: 100%; }
 main .container:first-child {
   margin-top: 60px;
 }
-.carousel-caption {
+#carouselHome {
+  background: #100F0D;
+}
+#carouselHome img {
+  height: 100vh;
+  object-fit: cover;
+  opacity: 55%;
+}
+#carouselHome .carousel-caption {
   text-align: initial;
 }
-/*.carousel-control-prev, .carousel-control-next {
-  display: none;
-}*/
+#carouselHome p {
+  margin: 45px 0;
+}
+#carouselHome a {
+  font-family: "Paris 2024", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  text-decoration: none;
+  background: #F3F3F3;
+  border: solid 3px #100F0D;
+  border-radius: 3px;
+  padding: 15px 0 15px 15px;
+  margin-top: 50px;
+}
+#carouselHome a:hover, #carouselHome a:hover::after {
+  background: #2f2f2e;
+  border-color: #2f2f2e;
+  color: #F3F3F3;
+}
+#carouselHome a::after {
+  background: #100F0D;
+  color: #F3F3F3;
+  content: "→";
+  border-radius: 100% 0 0 100%;
+  padding: 15px;
+  margin-left: 15px;
+}
+.carousel-indicators, .carousel-caption {
+  left: 3%;
+  right: 3%;
+}
+.carousel-control-next, .carousel-control-prev {
+  width: 5%;
+}
 .alert, .form-control, .form-select, .btn, .navbar-toggler {
   border-radius: 0;
 }
 
-/*#carouselHome {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-}*/
 
 .listaImagenes {
   display: flex;
@@ -100,15 +136,26 @@ footer {
 
 
 @media (max-width: 700px) {
+  #carouselHome a {
+    padding: 10px 0 10px 10px;
+    margin-top: 25px;
+  }
+  #carouselHome a::after {
+    padding: 10px;
+    margin-left: 10px;
+  }
+  .carousel-indicators, .carousel-caption {
+    left: 3%;
+    right: 3%;
+  }
+  .carousel-control-next, .carousel-control-prev {
+    width: 3%;
+  }
   .listaImagenes li { width: 49%; }
 }
 @media (max-width: 500px) {
   .sticky .navbar {
     background-image: url("https://olympics.com/_pr/topic-assets/paris-2024/sticky-header/green/mobile/m03.svg");
-  }
-  .carousel-indicators, .carousel-caption {
-    left: 3%;
-    right: 3%;
   }
   .listaImagenes li {
     width: 100%;
