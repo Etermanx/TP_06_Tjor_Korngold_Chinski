@@ -32,11 +32,13 @@ img { width: 100%; }
   font-size: 22px;
   width: 100%;
   padding: 0;
-  z-index: 1;
+  z-index: 3;
 }
 .sticky .navbar {
   position: fixed;
-  background: url("https://olympics.com/_pr/topic-assets/paris-2024/sticky-header/green/d03.svg");
+  background-position: center;
+  background-image: url("https://olympics.com/_pr/topic-assets/paris-2024/sticky-header/green/d03.svg");
+  background-size: cover;
 }
 .navbar-brand, .navbar-toggler-icon {
   padding: 0;
@@ -54,9 +56,6 @@ img { width: 100%; }
 
 main .container:first-child {
   margin-top: 60px;
-}
-.carousel-indicators, .carousel-caption {
-  right: auto;
 }
 .carousel-caption {
   text-align: initial;
@@ -105,7 +104,11 @@ footer {
 }
 @media (max-width: 500px) {
   .sticky .navbar {
-    background: url("https://olympics.com/_pr/topic-assets/paris-2024/sticky-header/green/mobile/m03.svg");
+    background-image: url("https://olympics.com/_pr/topic-assets/paris-2024/sticky-header/green/mobile/m03.svg");
+  }
+  .carousel-indicators, .carousel-caption {
+    left: 3%;
+    right: 3%;
   }
   .listaImagenes li {
     width: 100%;
