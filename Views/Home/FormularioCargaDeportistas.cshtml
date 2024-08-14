@@ -107,10 +107,24 @@
                 <!-- Iniciar país -->
                 <label for="pais" class="form-label">País*</label>
                 <select class="form-select" id="pais" name="IdPais" autocomplete="off" required>
-                    <option disabled value="">Elegir...</option>
+                    @if (ViewBag.Dep != null && ViewBag.Dep.IdPais != null) {
+                        <option disabled value="">Elegir...</option>
+                    }
+                    else
+                    {
+                        <option selected disabled value="">Elegir...</option>
+                    }
+
                     @foreach(Pais pais in ViewBag.ListarPaises)
                     {
-                        <option value="@pais.IdPais">@pais.Nombre</option>
+                        if (ViewBag.Dep != null && ViewBag.Dep.IdPais != null && ViewBag.Dep.IdPais == pais.IdPais)
+                        {
+                            <option value="@pais.IdPais" selected>@pais.Nombre</option>
+                        }
+                        else
+                        {
+                            <option value="@pais.IdPais">@pais.Nombre</option>
+                        }
                     }
                 </select>
                 <div class="invalid-feedback">Ingrese un país.</div>
