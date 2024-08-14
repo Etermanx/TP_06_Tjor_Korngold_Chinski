@@ -1,7 +1,8 @@
 body {
   font-family: "Source Sans Pro Paris2024", Helvetica, Arial, sans-serif;
   font-size: 18px;
-  margin-bottom: 60px;
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2 {
@@ -132,6 +133,35 @@ main .container:first-child {
 
 footer {
   line-height: 62px;
+  background-color: #100F0D;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer .redes-sociales {
+  margin-bottom: 20px;
+}
+
+footer .redes-sociales a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+footer p {
+  margin: 10px 0;
+  color: #ccc;
+}
+
+footer a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 
@@ -161,43 +191,4 @@ footer {
     width: 100%;
     margin-left: 0;
   }
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #2a3e52;
-  color: white;
-}
-
-footer {
-  background-color: #2a3e52;
-  padding: 20px 0;
-  text-align: center;
-}
-
-footer .redes-sociales {
-  margin-bottom: 20px;
-}
-
-footer .redes-sociales a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 24px;
-}
-
-footer p {
-  margin: 10px 0;
-  color: #ccc;
-}
-
-footer a {
-  color: #ccc;
-  text-decoration: none;
-  margin: 0 5px;
-}
-
-footer a:hover {
-  text-decoration: underline;
 }
