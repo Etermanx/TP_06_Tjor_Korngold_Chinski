@@ -1,0 +1,9 @@
+@{
+    ViewBag.Titulo = @ViewBag.DetallePais.Nombre;
+}
+<div class="container">
+    <img src="@ViewBag.DetallePais.Bandera" alt="Bandera de @ViewBag.DetallePais.Nombre">
+    <h1>@ViewBag.DetallePais.Nombre</h1>
+    <p>Fundado: @ViewBag.DetallePais.FechaFundacion.Day / @ViewBag.DetallePais.FechaFundacion.Month / @ViewBag.DetallePais.FechaFundacion.Year</p>
+    
+</div>
