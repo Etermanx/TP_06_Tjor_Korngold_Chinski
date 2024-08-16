@@ -129,5 +129,9 @@ public class HomeController : Controller
     {
         return View();
     }
+     public IActionResult InformacionLegal()
+    {
+        return View();
+    }
     
 }
