@@ -46,6 +46,7 @@ public class HomeController : Controller
 
     public IActionResult VerDetalleDeporte(int idDeporte)
     {
+        ViewBag.ListaDeportistas = BD.ListarDeportistasPorDeporte(idDeporte);
         ViewBag.DetalleDeporte = BD.VerInfoDeporte(idDeporte);
         if (ViewBag.DetalleDeporte != null)
         {

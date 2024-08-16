@@ -1,0 +1,28 @@
+@{
+    ViewBag.Titulo = "Detalles del deporte";
+}
+<div class="container">
+  
+<img src="~/img/Futbol.jpg" class="img-fluid" alt="...">
+
+<h1>@ViewBag.DetalleDeporte.Nombre</h1>
+
+
+
+@foreach (Deportista deportista in ViewBag.ListaDeportistas){
+
+    <div class="card" style="width: 18rem;">
+  <img src="@deportista.Foto" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">@deportista.Nombre</h5>
+    <a href="@Url.Action("VerDetalleDeportista", new { idDeportista = deportista.IdDeportista })">
+            Ver detalles del deporte
+        </a>
+    using System.Diagnostics;
+    using System.Diagnostics;
+  </div>
+</div>
+
+}
+
+</div>
