@@ -60,7 +60,16 @@ img { width: 100%; }
 
 
 main .container:first-child {
-  margin-top: 60px;
+  
+}
+main .container:first-child::before {
+  display: block;
+  width: 100%;
+  height: 200px;
+  margin: 0;
+  content: "";
+  background-color: red;
+  background-image: url("https://olympics.com/_pr/topic-assets/paris-2024/sticky-header/green/d03.svg");
 }
 #carouselHome {
   background: #100F0D;
