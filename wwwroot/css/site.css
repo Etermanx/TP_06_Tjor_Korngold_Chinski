@@ -97,7 +97,7 @@ main:has(> .container:first-child)::before {
   background: #100F0D;
 }
 #carouselHome img {
-  height: 100vh;
+  height: 90vh;
   object-fit: cover;
   opacity: 55%;
 }
