@@ -3,12 +3,29 @@
 }
 <div class="container">
     <div class="row">
-        <div class="col sm-2">
-        <img src="@ViewBag.DetallePais.Bandera" alt="Bandera de @ViewBag.DetallePais.Nombre">
+        <div class="col-sm-4">
+            <img src="@ViewBag.DetallePais.Bandera" alt="Bandera de @ViewBag.DetallePais.Nombre">
         </div>
-        <div class="col sm-6">
-        <h1>@ViewBag.DetallePais.Nombre</h1>
-        <p>Primera Participacion: @ViewBag.DetallePais.FechaFundacion.Day / @ViewBag.DetallePais.FechaFundacion.Month / @ViewBag.DetallePais.FechaFundacion.Year</p>
+        <div class="col-sm-8">
+            <h1>@ViewBag.DetallePais.Nombre</h1>
+            <p>Fecha de fundación: @ViewBag.DetallePais.FechaFundacion.ToString("yyyy-mm-dd")</p>
         </div>
+    </div>
+</div>
+<div class="container">
+    <h2>Deportistas</h2>
+    <div class="row">
+        @foreach (Deportista deportista in ViewBag.ListaDeportistas)
+        {
+        <div class="col-md-4 mr-3 mb-3">
+            <div class="card">
+                <img src="@deportista.Foto" class="card-img-top" alt="Foto de @deportista.Apellido">
+                <div class="card-body">
+                    <h3 class="card-title">@deportista.Nombre @deportista.Apellido</h3>
+                    <a class="infoBtn" href="@Url.Action("VerInfoDeportista", new { idDeportista = deportista.IdDeportista })">Más info</a>
+                </div>
+            </div>
+        </div>
+        }
     </div>
 </div>

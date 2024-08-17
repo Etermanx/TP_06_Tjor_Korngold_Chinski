@@ -14,7 +14,12 @@ h1, h2, h3 {
   font-weight: 800;
   text-transform: uppercase;
 }
-img { width: 100%; }
+img {
+  width: 100%;
+}
+img, .infoBtn, .alert, .form-control, .form-select, .btn {
+  border-radius: 5px;
+}
 .centrado {
   text-align: center;
 }
@@ -105,25 +110,23 @@ main:has(> .container:first-child)::before {
   text-align: initial;
 }
 #carouselHome p {
-  margin: 45px 0;
+  margin: 50px 0;
 }
-#carouselHome a {
+.infoBtn{
   font-family: "Paris 2024", Arial, Helvetica, sans-serif;
   font-weight: 700;
   font-style: italic;
   text-decoration: none;
   background: #F3F3F3;
   border: solid 3px #100F0D;
-  border-radius: 3px;
   padding: 15px 0 15px 15px;
-  margin-top: 50px;
 }
-#carouselHome a:hover, #carouselHome a:hover::after {
+.infoBtn:hover, .infoBtn:hover::after {
   background: #2F2F2E;
   border-color: #2F2F2E;
   color: #F3F3F3;
 }
-#carouselHome a::after {
+.infoBtn::after {
   background: #100F0D;
   color: #F3F3F3;
   content: "→";
@@ -137,9 +140,6 @@ main:has(> .container:first-child)::before {
 }
 .carousel-control-next, .carousel-control-prev {
   width: 5%;
-}
-.alert, .form-control, .form-select, .btn {
-  border-radius: 0;
 }
 
 
@@ -175,18 +175,18 @@ footer .redes-sociales {
 
 footer .redes-sociales a {
   margin: 0 10px;
-  color: white;
+  color: #FFFFFF;
   text-decoration: none;
   font-size: 24px;
 }
 
 footer p {
   margin: 10px 0;
-  color: #ccc;
+  color: #CCCCCC;
 }
 
 footer a {
-  color: #ccc;
+  color: #CCCCCC;
   text-decoration: none;
   margin: 0 5px;
 }
@@ -202,11 +202,13 @@ footer a:hover {
     background-color: transparent;
     font-size: 20px;
   }
-  #carouselHome a {
-    padding: 10px 0 10px 10px;
-    margin-top: 25px;
+  #carousel p {
+    margin: 25px 0;
   }
-  #carouselHome a::after {
+  .infoBtn {
+    padding: 10px 0 10px 10px;
+  }
+  .infoBtn::after {
     padding: 10px;
     margin-left: 10px;
   }
