@@ -11,7 +11,7 @@ h1, h2 {
 }
 h1, h2, h3 {
   font-family: "Paris 2024", Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  font-weight: 800;
   text-transform: uppercase;
 }
 img { width: 100%; }
@@ -28,16 +28,23 @@ img { width: 100%; }
   width: 33.33%;
   text-align: center;
 }
+.text-dark, a, a:hover, .nav-link, .nav-link:hover { color: #100F0D; }
+.bg-dark { background: #100F0D; }
 
 
 
 .navbar {
   position: absolute;
-  top: 0;
   font-size: 22px;
+  top: 0;
   width: 100%;
-  padding: 0;
+  padding: 25px;
   z-index: 3;
+}
+.navbar .container-fluid {
+  position: relative;
+  align-items: start;
+  padding: 0;
 }
 .sticky .navbar {
   position: fixed;
@@ -45,31 +52,46 @@ img { width: 100%; }
   background-image: url("https://olympics.com/_pr/topic-assets/paris-2024/sticky-header/green/d03.svg");
   background-size: cover;
 }
-.navbar-brand, .navbar-toggler-icon {
-  padding: 0;
-  margin: 10px 1.5rem;
+.navbar-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.sticky .navbar-brand {
+  top: -8px;
 }
 .navbar-brand img {
   width: auto;
-  height: 40px;
+  height: 120px;
 }
-.text-dark, a, a:hover { color: #100F0D; }
-.bg-dark { background: #100F0D; }
-.border-top { border-top: 1px solid #E5E5E5; }
-.border-bottom { border-bottom: 1px solid #E5E5E5; }
+.sticky .navbar-brand img {
+  height: 50px;
+}
+.navbar-toggler, .nav-item {
+  background-color: #F3F3F3;
+  font-weight: 600;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+#offcanvasNavbar { width: 100%; }
+.navbar-nav div:first-child li {
+  margin-right: 10px;
+}
+.navbar-nav div:last-child li {
+  margin-left: 10px;
+}
 
 
-main .container:first-child {
-  
-}
-main .container:first-child::before {
+main:has(> .container:first-child)::before {
   display: block;
-  width: 100%;
-  height: 200px;
-  margin: 0;
-  content: "";
-  background-color: red;
   background-image: url("https://olympics.com/_pr/topic-assets/paris-2024/sticky-header/green/d03.svg");
+  background-position: center;
+  background-size: cover;
+  content: "";
+  width: 100%;
+  height: 250px;
+  margin: 0;
 }
 #carouselHome {
   background: #100F0D;
@@ -97,8 +119,8 @@ main .container:first-child::before {
   margin-top: 50px;
 }
 #carouselHome a:hover, #carouselHome a:hover::after {
-  background: #2f2f2e;
-  border-color: #2f2f2e;
+  background: #2F2F2E;
+  border-color: #2F2F2E;
   color: #F3F3F3;
 }
 #carouselHome a::after {
@@ -116,7 +138,7 @@ main .container:first-child::before {
 .carousel-control-next, .carousel-control-prev {
   width: 5%;
 }
-.alert, .form-control, .form-select, .btn, .navbar-toggler {
+.alert, .form-control, .form-select, .btn {
   border-radius: 0;
 }
 
@@ -174,7 +196,12 @@ footer a:hover {
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 752px) {
+  .navbar-nav div:first-child li, .navbar-nav div:last-child li { margin: 0; }
+  .nav-item {
+    background-color: transparent;
+    font-size: 20px;
+  }
   #carouselHome a {
     padding: 10px 0 10px 10px;
     margin-top: 25px;
@@ -192,7 +219,7 @@ footer a:hover {
   }
   .listaImagenes li { width: 49%; }
 }
-@media (max-width: 500px) {
+@media (max-width: 576px) {
   .sticky .navbar {
     background-image: url("https://olympics.com/_pr/topic-assets/paris-2024/sticky-header/green/mobile/m03.svg");
   }
