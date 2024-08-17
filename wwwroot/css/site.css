@@ -95,13 +95,13 @@ main:has(> .container:first-child)::before {
   background-size: cover;
   content: "";
   width: 100%;
-  height: 250px;
+  height: 40vh;
   margin: 0;
 }
-#carouselHome {
+#carouselHome, .topImage {
   background: #100F0D;
 }
-#carouselHome img {
+#carouselHome img, .topImage img {
   height: 90vh;
   object-fit: cover;
   opacity: 55%;
@@ -162,6 +162,21 @@ main:has(> .container:first-child)::before {
 }
 
 
+.topImage img {
+  height: 40vh;
+}
+.topImage h1, .topImage h2 {
+  background-color: #F3F3F3;
+  color: #100F0D;
+  padding: 1px;
+}
+.topImage h1 img, .topImage h2 img {
+  width: auto;
+  height: 50px;
+  object-fit: unset;
+  opacity: 100%;
+  object-fit: none;
+}
 .card p {
   margin: 24px 0;
 }

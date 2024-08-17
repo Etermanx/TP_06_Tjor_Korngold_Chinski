@@ -1,28 +1,26 @@
 @{
-    ViewBag.Titulo = "Detalles del deporte";
+    ViewBag.Titulo = @ViewBag.DetalleDeporte.Nombre;
 }
-<div class="container">
-  
-<img src="~/img/Futbol.jpg" class="img-fluid" alt="...">
-
-<h1>@ViewBag.DetalleDeporte.Nombre</h1>
-
-
-
-@foreach (Deportista deportista in ViewBag.ListaDeportistas){
-
-    <div class="card" style="width: 18rem;">
-  <img src="@deportista.Foto" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">@deportista.Nombre</h5>
-    <a href="@Url.Action("VerDetalleDeportista", new { idDeportista = deportista.IdDeportista })">
-            Ver detalles del deporte
-        </a>
-    using System.Diagnostics;
-    using System.Diagnostics;
-  </div>
+<div class="card topImage">
+    <img src="~/img/Futbol.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay container d-flex align-items-end">
+      <h1 class="card-title"><img src="@ViewBag.DetalleDeporte.Foto" alt="Foto de @ViewBag.DetalleDeporte.Nombre"> @ViewBag.DetalleDeporte.Nombre</h1>
+    </div>
 </div>
-
-}
-
+<div class="container">
+    <h2>Deportistas</h2>
+    <div class="row">
+        @foreach (Deportista deportista in ViewBag.ListaDeportistas)
+        {
+        <div class="col-md-4 mr-3 mb-3">
+            <div class="card">
+                <img src="@deportista.Foto" class="card-img-top" alt="Foto de @deportista.Apellido">
+                <div class="card-body">
+                    <h3 class="card-title">@deportista.Nombre @deportista.Apellido</h3>
+                    <p><a class="infoBtn" href="@Url.Action("VerInfoDeportista", new { idDeportista = deportista.IdDeportista })">Más info</a></p>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
 </div>
