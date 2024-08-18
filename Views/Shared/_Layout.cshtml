@@ -4,7 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Titulo | Olympics.com</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"  asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/fontawesome.min.css"  asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/brands.min.css"  asp-append-version="true" />
     <link rel="stylesheet" href="~/css/fonts.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
@@ -15,7 +17,7 @@
                 <button
                     class="navbar-toggler"
                     type="button"
-                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" 
+                    data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                     aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -52,20 +54,23 @@
         @RenderBody()
     </main>
 
-    <footer class="footer border-top text-muted bg-dark">
+    <footer class="footer text-muted bg-dark">
          <div class="redes-sociales">
-            <a href="https://www.facebook.com/juegosolimpicos2024paris/"><i class="fab fa-facebook"></i> Facebook</a>
-            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://www.youtube.com/playlist?list=PLgETi64bAeW42y69WdWdgAqCdam10CF_N"><i class="fab fa-youtube"></i> YouTube</a>
-            <a href="https://x.com/juegosolimpicos?lang=es"><i class="fab fa-twitter"></i> X</a>
-            <a href="https://ar.linkedin.com/"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://www.tiktok.com/tag/juegosolimpicos?lang=es"><i class="fab fa-medium"></i> TikTok</a>
+            Síguenos en:
+            <a href="https://www.facebook.com/Paris2024"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://x.com/juegosolimpicos?lang=es"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.instagram.com/paris2024/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com/channel/UCg4W1uf-i5X1nVaeWJsKuyA/videos"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@@paris2024officiel"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://wwww.linkedin.com/company/paris-2024-olympic-and-paralympic-games-bid"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.threads.net/@@paris2024"><i class="fa-brands fa-threads"></i></a>
         </div>
-        <p>Copyright © 2024 Tomas Korngold,David Chinski y Lucas Tjor</p>
+        <p>Copyright &copy; 2024 Tomas Korngold, David Chinski y Lucas Tjor</p>
         <p>
             <a href="@Url.Action("InformacionLegal")">Información legal</a> | <a href="@Url.Action("PoliticaPrivacidad")">Política de privacidad</a>
         </p>
     </footer>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 </body>

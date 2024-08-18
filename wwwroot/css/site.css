@@ -197,7 +197,6 @@ main:has(> .container:first-child)::before {
 
 footer {
   line-height: 62px;
-  background-color: #100F0D;
   padding: 20px 0;
   text-align: center;
 }
