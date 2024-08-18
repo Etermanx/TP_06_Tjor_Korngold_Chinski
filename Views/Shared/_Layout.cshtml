@@ -5,21 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Titulo | Olympics.com</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"  asp-append-version="true" />
-    <link rel="stylesheet" href="~/lib/fontawesome/css/fontawesome.min.css"  asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/fontawesome/css/brands.min.css"  asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/solid.min.css"  asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/fontawesome/css/fontawesome.min.css"  asp-append-version="true" />
     <link rel="stylesheet" href="~/css/fonts.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-light box-shadow mb-3">
+        <nav class="navbar navbar-expand-md navbar-toggleable-md box-shadow">
             <div class="container-fluid">
                 <button
                     class="navbar-toggler"
                     type="button"
                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                     aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="fa-solid fa-bars"></span>
                 </button>
                 
                 <a class="navbar-brand" href="@Url.Action("")">
@@ -27,9 +28,11 @@
                 </a>
 
                 <!-- Empieza offcanvas navbar -->
-                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" data-bs-theme="dark">
+                <div class="offcanvas offcanvas-start text-light" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div class="offcanvas-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close">
+                            <span class="fa-solid fa-x"></span>
+                        </button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav d-flex justify-content-between flex-grow-1">
