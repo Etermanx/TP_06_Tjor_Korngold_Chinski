@@ -61,6 +61,7 @@ img, .infoBtn, .alert, .form-control, .form-select, .btn {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 .sticky .navbar-brand {
   top: -8px;
@@ -79,7 +80,10 @@ img, .infoBtn, .alert, .form-control, .form-select, .btn {
   text-transform: uppercase;
   border-radius: 50px;
 }
-#offcanvasNavbar { width: 100%; }
+#offcanvasNavbar {
+  width: 100%;
+  z-index: 0;
+}
 .navbar-nav div:first-child li {
   margin-right: 10px;
 }
