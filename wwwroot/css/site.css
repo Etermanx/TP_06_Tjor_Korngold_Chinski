@@ -38,7 +38,7 @@ img, .infoBtn, .alert, .form-control, .form-select, .btn {
 
 
 
-.offcanvas-header, .navbar {
+.navbar, .offcanvas-header {
   padding: 25px;
 }
 .navbar {
@@ -246,7 +246,7 @@ footer a:hover {
   .navbar-nav div:first-child li, .navbar-nav div:last-child li { margin: 0; }
   .nav-item {
     background: transparent;
-    margin-top: 3%;
+    margin: 3% 25px;
   }
   .nav:link, .nav-link:visited, .nav-link:active { color: #FFFFFF; }
   .nav-item:hover {
