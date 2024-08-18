@@ -22,7 +22,7 @@
                 <img src="@deportista.Foto" class="card-img-top" alt="Foto de @deportista.Apellido">
                 <div class="card-body">
                     <h3 class="card-title">@deportista.Nombre @deportista.Apellido</h3>
-                    <p><a class="infoBtn" href="@Url.Action("VerInfoDeportista", new { idDeportista = deportista.IdDeportista })">Más info</a></p>
+                    <p><a class="infoBtn" href="@Url.Action("VerDetalleDeportista", new { idDeportista = deportista.IdDeportista })">Más info</a></p>
                 </div>
             </div>
         </div>

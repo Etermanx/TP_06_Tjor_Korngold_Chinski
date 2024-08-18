@@ -71,7 +71,7 @@ public class HomeController : Controller
     public IActionResult VerDetalleDeportista(int idDeportista)
     {
         ViewBag.DetalleDeportista = BD.VerInfoDeportista(idDeportista);
-        if (ViewBag.DetalleDeporte != null)
+        if (ViewBag.DetalleDeportista != null)
             return View("DetalleDeportista");
         else
             return RedirectToAction("Error");

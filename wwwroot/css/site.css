@@ -112,6 +112,9 @@ main:has(> .container:first-child)::before {
 #carouselHome p {
   margin: 50px 0;
 }
+.container, footer {
+  margin-top: 3%;
+}
 .infoBtn {
   font-family: "Paris 2024", Arial, Helvetica, sans-serif;
   font-weight: 700;
@@ -188,29 +191,24 @@ footer {
   padding: 20px 0;
   text-align: center;
 }
-
 footer .redes-sociales {
   margin-bottom: 20px;
 }
-
 footer .redes-sociales a {
   margin: 0 10px;
   color: #FFFFFF;
   text-decoration: none;
   font-size: 24px;
 }
-
 footer p {
   margin: 10px 0;
   color: #CCCCCC;
 }
-
 footer a {
   color: #CCCCCC;
   text-decoration: none;
   margin: 0 5px;
 }
-
 footer a:hover {
   text-decoration: underline;
 }

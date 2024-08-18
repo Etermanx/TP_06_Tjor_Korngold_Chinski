@@ -1,4 +1,18 @@
 @{
-
-    ViewBag.Titulo = "Detalles del deportista";
+    ViewBag.Titulo = ViewBag.DetalleDeportista.Apellido + ", " + ViewBag.DetalleDeportista.Nombre;
 }
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@ViewBag.DetalleDeportista.Foto" alt="Foto de @ViewBag.DetalleDeportista.Apellido">
+        </div>
+        <div class="col-md-8">
+            <h1>@ViewBag.DetalleDeportista.Nombre @ViewBag.DetalleDeportista.Apellido</h1>
+            <div class="row">
+                <div class="col-sm">
+                    <p>🎂 @ViewBag.DetalleDeportista.FechaNacimiento.ToString("yyyy-MM-dd")</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
