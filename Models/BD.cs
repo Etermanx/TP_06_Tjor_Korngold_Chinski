@@ -17,7 +17,7 @@ public static class BD {
             });
         }
     }
-    public static int EliminarDeportista (int IdDeportista)
+    public static int EliminarDeportista(int IdDeportista)
     {
         int deportistasEliminados = 0;
         string sql = "DELETE FROM Deportistas WHERE IdDeportista = @pDeportista";
@@ -39,7 +39,7 @@ public static class BD {
         }
         return depMuestra;
     }
-    public static Pais? VerInfoPais (int idPais)
+    public static Pais? VerInfoPais(int idPais)
     {
         Pais? paisMuestra;
         using (SqlConnection BD = new SqlConnection (_connectionString))
@@ -61,7 +61,7 @@ public static class BD {
     }
 
 
-    public static List<Pais> ListarPaises () 
+    public static List<Pais> ListarPaises() 
     {
         List<Pais> ListaPaises = new List<Pais>();
         using (SqlConnection BD  = new SqlConnection(_connectionString))
@@ -87,7 +87,7 @@ public static class BD {
         List<Deportista> ListaDeportistas;
         using (SqlConnection BD = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Deportistas WHERE IdDeporte = @pIdDeporte ORDER BY Nombre";
+            string sql = "SELECT * FROM Deportistas WHERE IdDeporte = @pIdDeporte ORDER BY Apellido, Nombre";
             ListaDeportistas = BD.Query<Deportista>(sql, new { pIdDeporte = idDeporte }).ToList();
         }
         return ListaDeportistas;
@@ -97,7 +97,7 @@ public static class BD {
         List<Deportista> ListaDeportistas;
         using (SqlConnection BD = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Deportistas WHERE IdPais = @pIdPais ORDER BY Nombre";
+            string sql = "SELECT * FROM Deportistas WHERE IdPais = @pIdPais ORDER BY Apellido, Nombre";
             ListaDeportistas = BD.Query<Deportista>(sql, new { pIdPais = idPais }).ToList();
         }
         return ListaDeportistas;
