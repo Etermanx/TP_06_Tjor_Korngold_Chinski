@@ -183,6 +183,16 @@ main:has(> .container:first-child)::before {
 .card p {
   margin: 24px 0;
 }
+.iconosPequenios {
+  font-size: 26px;
+}
+.iconosPequenios a {
+  text-decoration: none;
+}
+.iconosPequenios img {
+  width: auto;
+  height: 26px;
+}
 
 
 footer {

@@ -72,7 +72,11 @@ public class HomeController : Controller
     {
         ViewBag.DetalleDeportista = BD.VerInfoDeportista(idDeportista);
         if (ViewBag.DetalleDeportista != null)
+        {
+            ViewBag.DetalleDeporte = BD.VerInfoDeporte(ViewBag.DetalleDeportista.IdDeporte);
+            ViewBag.DetallePais = BD.VerInfoPais(ViewBag.DetalleDeportista.IdPais);
             return View("DetalleDeportista");
+        }
         else
             return RedirectToAction("Error");
     }

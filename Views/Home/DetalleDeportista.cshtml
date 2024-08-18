@@ -8,10 +8,23 @@
         </div>
         <div class="col-md-8">
             <h1>@ViewBag.DetalleDeportista.Nombre @ViewBag.DetalleDeportista.Apellido</h1>
-            <div class="row">
-                <div class="col-sm">
-                    <p>🎂 @ViewBag.DetalleDeportista.FechaNacimiento.ToString("yyyy-MM-dd")</p>
-                </div>
+            <div class="row iconosPequenios">
+                <p class="col-sm">
+                    🎂
+                    @ViewBag.DetalleDeportista.FechaNacimiento.ToString("yyyy-MM-dd")
+                </p>
+                <p class="col-sm">
+                    <a href="@Url.Action("VerDetalleDeporte", new { idDeporte = ViewBag.DetalleDeporte.IdDeporte })">
+                        <img src="@ViewBag.DetalleDeporte.Foto" alt="Foto de @ViewBag.DetalleDeporte.Nombre">
+                        @ViewBag.DetalleDeporte.Nombre
+                    </a>
+                </p>
+                <p class="col-sm">
+                    <a href="@Url.Action("VerDetallePais", new { idPais = ViewBag.DetallePais.IdPais })">
+                        <img src="@ViewBag.DetallePais.Bandera" alt="Bandera de @ViewBag.DetallePais.Nombre">
+                        @ViewBag.DetallePais.Nombre
+                    </a>
+                </p>
             </div>
         </div>
     </div>
