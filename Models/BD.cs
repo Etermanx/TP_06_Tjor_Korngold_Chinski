@@ -2,6 +2,19 @@ using System.Data.SqlClient;
 using Dapper;
 public static class BD {
     const string _connectionString = @"Server=localhost;Database=JJOO;Trusted_Connection=True;";
+
+    public static void AgregarDeporte(Deporte deporte)
+    {
+        string sql = "INSERT INTO Deportes (Nombre, Foto, Banner) VALUES (@pNombre, @pFoto, @pBanner)";
+        using (SqlConnection BD = new SqlConnection(_connectionString))
+        {
+            BD.Execute(sql, new {
+                pNombre = deporte.Nombre,
+                pFoto = deporte.Foto,
+                pBanner = deporte.Banner
+            });
+        }
+    }
     public static void AgregarDeportista(Deportista deportista)
     {
         string sql = "INSERT INTO Deportistas (Apellido, Nombre, FechaNacimiento, Foto, IdPais, IdDeporte) VALUES (@pApellido, @pNombre, @pFechaNacimiento, @pFoto, @pIdPais, @pIdDeporte)";
@@ -102,14 +115,24 @@ public static class BD {
         }
         return ListaDeportistas;
     }
-    /*public static List<Medalla> ListarMedallasPorPais()
+    public static List<MedallasPais> ListarCantMedallasPais(int cantidad)
     {
-        List<Medalla> ListarMedallasPorPais;
+        List<MedallasPais> ListaMedallasPais;
+        using (SqlConnection BD = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT TOP(@pCantidad) IdPais, TipoMedalla, COUNT(*) AS Cantidad FROM Medallas GROUP BY IdPais, TipoMedalla";
+            ListaMedallasPais = BD.Query<MedallasPais>(sql, new { pCantidad = cantidad }).ToList();
+        }
+        return ListaMedallasPais;
+    }
+    public static List<MedallasPais> ListarMedallasPais()
+    {
+        List<MedallasPais> ListaMedallasPais;
         using (SqlConnection BD = new SqlConnection(_connectionString))
         {
             string sql = "SELECT IdPais, TipoMedalla, COUNT(*) AS Cantidad FROM Medallas GROUP BY IdPais, TipoMedalla";
-            ListarMedallasPorPais = BD.Query<Medalla>(sql).ToList();
+            ListaMedallasPais = BD.Query<MedallasPais>(sql).ToList();
         }
-        return ListarMedallasPorPais;
-    }*/
+        return ListaMedallasPais;
+    }
 }

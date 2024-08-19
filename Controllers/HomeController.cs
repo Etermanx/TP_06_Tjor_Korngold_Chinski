@@ -84,6 +84,10 @@ public class HomeController : Controller
     }
 
 
+    public IActionResult AgregarDeporte()
+    {
+        return View("FormularioCargaDeportes");
+    }
     public IActionResult AgregarDeportista()
     {
         ViewBag.ListarDeportes = BD.ListarDeportes();
@@ -92,12 +96,29 @@ public class HomeController : Controller
         return View("FormularioCargaDeportistas");
     }
 
+
     public IActionResult EliminarDeportista(int idCandidato)
     {
         BD.EliminarDeportista(idCandidato);
         return View("Index");
     }
 
+    [HttpPost]
+    public IActionResult GuardarDeporte(Deporte dep)
+    {
+        bool parametrosExisten = !String.IsNullOrEmpty(dep.Nombre) && !String.IsNullOrEmpty(dep.Foto) && !String.IsNullOrEmpty(dep.Banner);
+        ViewBag.Dep = dep;
+
+        if (parametrosExisten)
+        {
+            BD.AgregarDeporte(dep);
+            return RedirectToAction("Index");
+        }
+        else
+           ViewBag.Error = "Faltan completar cosas";
+
+        return View("FormularioCargaDeporte");
+    }
     [HttpPost]
     public IActionResult GuardarDeportista(Deportista dep)
     {
@@ -123,6 +144,30 @@ public class HomeController : Controller
         ViewBag.ListarPaises = BD.ListarPaises();
         return View("FormularioCargaDeportistas");
     }
+    /*[HttpPost]
+    public IActionResult GuardarPaises(Pais pai, IFormFile Bandera)
+    {
+        bool parametrosExisten = !String.IsNullOrEmpty(pai.Nombre) && Bandera == null && pai.FechaFundacion != DateTime.MinValue;
+        bool fkExisten;
+
+        if (parametrosExisten)
+        {
+            fkExisten = BD.VerInfoPais(pai.Nombre) != null && BD.VerInfoDeporte(dep.IdDeporte) != null;
+            if (fkExisten)
+            {
+                BD.AgregarDeportista(dep);
+                return RedirectToAction("Index");
+            }
+            else
+                ViewBag.Error = "El país/deporte no existe(n)";
+        }
+        else
+           ViewBag.Error = "Faltan completar cosas";
+
+        ViewBag.ListarDeportes = BD.ListarDeportes();
+        ViewBag.ListarPaises = BD.ListarPaises();
+        return View("FormularioCargaDeportistas");
+    }*/
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,0 +1,70 @@
+@{
+    ViewBag.Titulo = "Agregar deporte";
+}
+<div class="container">
+    <h1>Agregar deporte</h1>
+    <form class="needs-validation" method="POST" action="@Url.Action("GuardarDeporte")" novalidate>
+        @if (ViewBag.Error != null)
+        {
+        <div class="row gy-3">
+            <div class="col-md">
+                <div class="alert alert-danger">@ViewBag.Error</div>
+            </div>
+        </div>
+        }
+        <div class="row gy-3 mb-2">
+            <div class="col-md">
+                <!-- Iniciar nombre -->
+                <label for="nombre" class="form-label">Nombre*</label>
+                @if (ViewBag.Dep != null && ViewBag.Dep.Nombre != null)
+                {
+                    <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Tenis de mesa" value="@ViewBag.Dep.Nombre" autocomplete="off" required>
+                }
+                else
+                {
+                    <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Tenis de mesa" autocomplete="off" required>
+                }
+                <div class="invalid-feedback">Ingrese un nombre.</div>
+                <!-- Fin nombre -->
+            </div>
+        </div>
+        <div class="row gy-3 mb-2">
+            <div class="col-md">
+                <!-- Iniciar foto -->
+                <label for="foto" class="form-label">Foto*</label>
+                @if (ViewBag.Dep != null && ViewBag.Dep.Foto != null)
+                {
+                    <input type="url" class="form-control" id="foto" name="Foto" placeholder="https://www.example.com/foto.jpg" value="@ViewBag.Dep.Foto" aria-describedby="fotoHelp" autocomplete="off" required>
+                }
+                else
+                {
+                    <input type="url" class="form-control" id="foto" name="Foto" placeholder="https://www.example.com/foto.jpg" aria-describedby="fotoHelp" autocomplete="off" required>
+                }
+                <div id="fotoHelp" class="form-text">Usar la URL de una imagen de Internet.</div>
+                <div class="invalid-feedback">Ingrese una foto.</div>
+                <!-- Fin foto -->
+            </div>
+            <div class="col-md">
+                <!-- Iniciar banner -->
+                <label for="banner" class="form-label">Banner*</label>
+                @if (ViewBag.Dep != null && ViewBag.Dep.Banner != null)
+                {
+                    <input type="url" class="form-control" id="banner" name="Banner" placeholder="https://www.example.com/banner.png" value="@ViewBag.Dep.Banner" aria-describedby="bannerHelp" autocomplete="off" required>
+                }
+                else
+                {
+                    <input type="url" class="form-control" id="banner" name="Banner" placeholder="https://www.example.com/banner.png" aria-describedby="bannerHelp" autocomplete="off" required>
+                }
+                <div id="fotoHelp" class="form-text">Usar la URL de una imagen de Internet.</div>
+                <div class="invalid-feedback">Ingrese una banner.</div>
+                <!-- Fin banner -->
+            </div>
+        </div>
+        <div class="row gy-3">
+            <div class="col-md">
+                <input class="btn btn-primary" type="submit" value="Agregar" />
+                <input class="btn btn-outline-secondary" type="reset" value="Borrar" />
+            </div>
+        </div>
+    </form>
+</div>
