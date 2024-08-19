@@ -10,10 +10,11 @@ namespace TP_06_Tjor_Korngold_Chinski.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    private readonly IWebHostEnvironment _webHost;
+    public HomeController(ILogger<HomeController> logger, IWebHostEnvironment webHost)
     {
         _logger = logger;
+        _webHost = webHost;
     }
 
 
@@ -56,20 +57,6 @@ public class HomeController : Controller
         else
             return RedirectToAction("Error");
     }
-
-    public IActionResult VerDetallePais(int idPais)
-    {
-        ViewBag.DetallePais = BD.VerInfoPais(idPais);
-        if (ViewBag.DetallePais != null)
-        {
-            ViewBag.ListaDeportistas = BD.ListarDeportistasPorPais(idPais);
-            ViewBag.ListaDeportes = BD.ListarDeportes();
-            return View("DetallePais");
-        }
-        else
-            return RedirectToAction("Error");
-    }
-
     public IActionResult VerDetalleDeportista(int idDeportista)
     {
         ViewBag.DetalleDeportista = BD.VerInfoDeportista(idDeportista);
@@ -78,6 +65,18 @@ public class HomeController : Controller
             ViewBag.DetalleDeporte = BD.VerInfoDeporte(ViewBag.DetalleDeportista.IdDeporte);
             ViewBag.DetallePais = BD.VerInfoPais(ViewBag.DetalleDeportista.IdPais);
             return View("DetalleDeportista");
+        }
+        else
+            return RedirectToAction("Error");
+    }
+    public IActionResult VerDetallePais(int idPais)
+    {
+        ViewBag.DetallePais = BD.VerInfoPais(idPais);
+        if (ViewBag.DetallePais != null)
+        {
+            ViewBag.ListaDeportistas = BD.ListarDeportistasPorPais(idPais);
+            ViewBag.ListaDeportes = BD.ListarDeportes();
+            return View("DetallePais");
         }
         else
             return RedirectToAction("Error");
@@ -95,6 +94,10 @@ public class HomeController : Controller
 
         return View("FormularioCargaDeportistas");
     }
+    public IActionResult AgregarPais()
+    {
+        return View("FormularioCargaPaises");
+    }
 
 
     public IActionResult EliminarDeportista(int idCandidato)
@@ -102,6 +105,7 @@ public class HomeController : Controller
         BD.EliminarDeportista(idCandidato);
         return View("Index");
     }
+
 
     [HttpPost]
     public IActionResult GuardarDeporte(Deporte dep)
@@ -144,30 +148,22 @@ public class HomeController : Controller
         ViewBag.ListarPaises = BD.ListarPaises();
         return View("FormularioCargaDeportistas");
     }
-    /*[HttpPost]
-    public IActionResult GuardarPaises(Pais pai, IFormFile Bandera)
+    [HttpPost]
+    public IActionResult GuardarPais(Pais pai)
     {
-        bool parametrosExisten = !String.IsNullOrEmpty(pai.Nombre) && Bandera == null && pai.FechaFundacion != DateTime.MinValue;
-        bool fkExisten;
+        bool parametrosExisten = !String.IsNullOrEmpty(pai.Nombre) && !String.IsNullOrEmpty(pai.Bandera);
+        ViewBag.Pai = pai;
 
         if (parametrosExisten)
         {
-            fkExisten = BD.VerInfoPais(pai.Nombre) != null && BD.VerInfoDeporte(dep.IdDeporte) != null;
-            if (fkExisten)
-            {
-                BD.AgregarDeportista(dep);
-                return RedirectToAction("Index");
-            }
-            else
-                ViewBag.Error = "El país/deporte no existe(n)";
+            BD.AgregarPais(pai);
+            return RedirectToAction("Index");
         }
         else
            ViewBag.Error = "Faltan completar cosas";
 
-        ViewBag.ListarDeportes = BD.ListarDeportes();
-        ViewBag.ListarPaises = BD.ListarPaises();
-        return View("FormularioCargaDeportistas");
-    }*/
+        return View("FormularioCargaPaises");
+    }
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -179,11 +175,8 @@ public class HomeController : Controller
     {
         return View();
     }
-     public IActionResult InformacionLegal()
+    public IActionResult InformacionLegal()
     {
         return View();
     }
-
-
-    
 }

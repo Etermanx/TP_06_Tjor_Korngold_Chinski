@@ -1,0 +1,83 @@
+@{
+    ViewBag.Titulo = "Agregar países";
+}
+<div class="container">
+    <h1>Agregar países</h1>
+    <form class="needs-validation" method="POST" action="@Url.Action("GuardarPais")" enctype="multipart/form-data" novalidate>
+        @if (ViewBag.Error != null)
+        {
+        <div class="row gy-3">
+            <div class="col-md">
+                <div class="alert alert-danger">@ViewBag.Error</div>
+            </div>
+        </div>
+        }
+        <div class="row gy-3 mb-2">
+            <div class="col-md">
+                <!-- Iniciar apellido -->
+                <label for="nombre" class="form-label">Nombre*</label>
+                @if (ViewBag.Pai != null && ViewBag.Pai.Nombre != null)
+                {
+                    <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Argentina" value="@ViewBag.Pai.Nombre" autocomplete="off" required>
+                }
+                else
+                {
+                    <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Argentina" autocomplete="off" required>
+                }
+                <div class="invalid-feedback">Ingrese un nombre.</div>
+                <!-- Fin apellido -->
+            </div>
+            <div class="col-md">
+                <!-- Iniciar bandera -->
+                <label for="bandera" class="form-label">Bandera*</label>
+                @if (ViewBag.Pai != null && ViewBag.Pai.Bandera != null)
+                {
+                    <input type="url" class="form-control" id="bandera" name="Bandera" placeholder="https://www.example.com/bandera.jpg" value="@ViewBag.Pai.Bandera" aria-describedby="banderaHelp" autocomplete="off" required>
+                }
+                else
+                {
+                    <input type="url" class="form-control" id="bandera" name="Bandera" placeholder="https://www.example.com/bandera.jpg" aria-describedby="banderaHelp" autocomplete="off" required>
+                }
+                <div id="banderaHelp" class="form-text">Usar la URL de una imagen de Internet.</div>
+                <div class="invalid-feedback">Ingrese una bandera.</div>
+                <!-- Fin bandera -->
+            </div>
+        </div>
+        <div class="row gy-3 mb-2">
+            <div class="col-md">
+                <!-- Iniciar fecha de fundación -->
+                <label for="fechaFundacion" class="form-label">Fecha de fundación*</label>
+                @if (ViewBag.Pai != null && ViewBag.Pai.FechaFundacion != null)
+                {
+                    <input type="date" class="form-control" id="fechaFundacion" name="FechaFundacion" value="@ViewBag.Pai.FechaFundacion.ToString("yyyy-MM-dd")" autocomplete="off" required>
+                }
+                else
+                {
+                    <input type="date" class="form-control" id="fechaFundacion" name="FechaFundacion" autocomplete="off" required>
+                }
+                <div class="invalid-feedback">Ingrese una fecha de fundación.</div>
+                <!-- Fin fecha de fundación -->
+            </div>
+            <div class="col-md">
+                <!-- Iniciar himno -->
+                <label for="himno" class="form-label">Himno</label>
+                @if (ViewBag.Pai != null && ViewBag.Pai.Himno != null)
+                {
+                    <input type="url" class="form-control" id="himno" name="Himno" placeholder="https://www.example.com/himno.mp3" value="@ViewBag.Pai.Himno" aria-describedby="himnoHelp" autocomplete="off">
+                }
+                else
+                {
+                    <input type="url" class="form-control" id="himno" name="Himno" placeholder="https://www.example.com/himno.mp3" aria-describedby="himnoHelp" autocomplete="off">
+                }
+                <div class="invalid-feedback">Ingrese una himno.</div>
+                <!-- Fin himno -->
+            </div>
+        </div>
+        <div class="row gy-3">
+            <div class="col-md">
+                <input class="btn btn-primary" type="submit" value="Agregar" />
+                <input class="btn btn-outline-secondary" type="reset" value="Borrar" />
+            </div>
+        </div>
+    </form>
+</div>

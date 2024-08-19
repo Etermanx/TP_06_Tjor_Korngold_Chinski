@@ -30,6 +30,19 @@ public static class BD {
             });
         }
     }
+    public static void AgregarPais(Pais pais)
+    {
+        string sql = "INSERT INTO Pais (Nombre, Bandera, FechaFundacion, Himno) VALUES (@pNombre, @pBandera, @pFechaFundacion, @pHimno)";
+        using (SqlConnection BD = new SqlConnection(_connectionString))
+        {
+            BD.Execute(sql, new {
+                pNombre = pais.Nombre,
+                pBandera = pais.Bandera,
+                pFechaFundacion = pais.FechaFundacion,
+                pHimno = pais.Himno
+            });
+        }
+    }
     public static int EliminarDeportista(int IdDeportista)
     {
         int deportistasEliminados = 0;
