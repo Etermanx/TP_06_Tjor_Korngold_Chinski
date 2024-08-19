@@ -191,9 +191,7 @@ main:has(> .container:first-child)::before {
 .topImage h1 img, .topImage h2 img {
   width: auto;
   height: 50px;
-  object-fit: unset;
   opacity: 100%;
-  object-fit: none;
 }
 .container .card {
   margin-right: 3%;
