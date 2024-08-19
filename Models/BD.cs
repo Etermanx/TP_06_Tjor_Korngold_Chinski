@@ -102,4 +102,14 @@ public static class BD {
         }
         return ListaDeportistas;
     }
+    /*public static List<Medalla> ListarMedallasPorPais()
+    {
+        List<Medalla> ListarMedallasPorPais;
+        using (SqlConnection BD = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT IdPais, TipoMedalla, COUNT(*) AS Cantidad FROM Medallas GROUP BY IdPais, TipoMedalla";
+            ListarMedallasPorPais = BD.Query<Medalla>(sql).ToList();
+        }
+        return ListarMedallasPorPais;
+    }*/
 }
