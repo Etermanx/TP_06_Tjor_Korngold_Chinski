@@ -92,6 +92,10 @@ img, .infoBtn, .alert, .form-control, .form-select, .btn {
   padding: 0;
   border-radius: 100%;
 }
+.nav-item:hover{
+  background: #CCCCCC;
+  color: #2F2F2E;
+}
 #offcanvasNavbar {
   width: 100%;
 }
@@ -171,6 +175,8 @@ main:has(> .container:first-child)::before {
   text-align: center;
   width: 32.33%;
   margin-left: 1%;
+  margin-bottom: 1%;
+  font-weight: 650;
 }
 .listaImagenes a {
   text-decoration: none;
@@ -211,6 +217,9 @@ main:has(> .container:first-child)::before {
 .iconosPequenios img {
   width: auto;
   height: 26px;
+}
+.btn.btn-success{
+  margin-bottom: 0.5rem;
 }
 
 

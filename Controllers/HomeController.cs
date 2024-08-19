@@ -50,6 +50,7 @@ public class HomeController : Controller
         if (ViewBag.DetalleDeporte != null)
         {
             ViewBag.ListaDeportistas = BD.ListarDeportistasPorDeporte(idDeporte);
+            ViewBag.ListaPaises = BD.ListarPaises();
             return View("DetalleDeporte");
         }
         else
@@ -62,6 +63,7 @@ public class HomeController : Controller
         if (ViewBag.DetallePais != null)
         {
             ViewBag.ListaDeportistas = BD.ListarDeportistasPorPais(idPais);
+            ViewBag.ListaDeportes = BD.ListarDeportes();
             return View("DetallePais");
         }
         else
