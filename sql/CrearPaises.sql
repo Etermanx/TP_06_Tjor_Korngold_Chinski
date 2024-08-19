@@ -1,6 +1,6 @@
 USE JJOO;
 
-INSERT INTO Paises (Nombre, Bandera, FechaFundacion,Himno)
+INSERT INTO Paises (Nombre, Bandera, FechaFundacion, Himno)
 VALUES
     ('Afganistán', 'https://gstatic.olympics.com/s1/f_auto/t_original/static/ioc/flag/3x2/AFG', '1936-08-01','https://upload.wikimedia.org/wikipedia/commons/6/6f/National_anthem_of_Afghanistan%2C_performed_by_the_United_States_Navy_Band.wav'),
     ('Albania', 'https://gstatic.olympics.com/s1/f_auto/t_original/static/ioc/flag/3x2/ALB', '1972-08-26','https://upload.wikimedia.org/wikipedia/commons/5/52/Hymni_i_Flamurit_instrumental.ogg'),
