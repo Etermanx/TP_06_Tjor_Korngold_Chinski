@@ -14,18 +14,25 @@
 </div>
 <div class="container">
     <h2>Deportistas</h2>
-    <div class="row">
+    @if (ViewBag.ListaDeportistas.Count != 0)
+    {
+        <div class="d-flex justify-content">
         @foreach (Deportista deportista in ViewBag.ListaDeportistas)
         {
-        <div class="col-md-4 mr-3 mb-3">
-            <div class="card">
-                <img src="@deportista.Foto" class="card-img-top" alt="Foto de @deportista.Apellido">
-                <div class="card-body">
-                    <h3 class="card-title">@deportista.Nombre @deportista.Apellido</h3>
-                    <p><a class="infoBtn" href="@Url.Action("VerDetalleDeportista", new { idDeportista = deportista.IdDeportista })">Más info</a></p>
+            <div class="col-md-4 mr-3 mb-3">
+                <div class="card">
+                    <img src="@deportista.Foto" class="card-img-top" alt="Foto de @deportista.Apellido">
+                    <div class="card-body">
+                        <h3 class="card-title">@deportista.Nombre @deportista.Apellido</h3>
+                        <p><a class="infoBtn" href="@Url.Action("VerDetalleDeportista", new { idDeportista = deportista.IdDeportista })">Más info</a></p>
+                    </div>
                 </div>
             </div>
-        </div>
         }
-    </div>
+        </div>
+    }
+    else
+    {
+        <p class="text-secondary text-center">No hay deportistas.</p>
+    }
 </div>
