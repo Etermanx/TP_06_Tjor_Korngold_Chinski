@@ -184,11 +184,12 @@ main:has(> .container:first-child)::before {
   height: 40vh;
 }
 .topImage h1, .topImage h2 {
-  background: #F3F3F3;
-  color: #100F0D;
+  color: #F3F3F3;
+  font-style: italic;
   padding: 1px;
 }
 .topImage h1 img, .topImage h2 img {
+  background: #F3F3F3;
   width: auto;
   height: 50px;
   opacity: 100%;
